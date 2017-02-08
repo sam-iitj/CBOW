@@ -1,7 +1,7 @@
 import numpy as np 
 import nltk 
 
-class cbow():
+class cbow:
 	"""
 	This class is an implementation of the continous bag of words model 
 	by first principles. 
@@ -188,7 +188,7 @@ class cbow():
 
 
 text = nltk.corpus.gutenberg.words('austen-emma.txt')
-text = ' '.join(text)
+text = ' '.join(text[:100])
 
 model  = cbow(text=text)
 model.fit()
@@ -203,6 +203,6 @@ import matplotlib.pylab as plt
 for k, v in final_vectors.items():
 	plt.text(v[0], v[1], k)
 
-plt.xlim(-0.01, 0.01)
-plt.ylim(-0.01, 0.01)
+#plt.xlim(-0.01, 0.01)
+#plt.ylim(-0.01, 0.01)
 plt.show()
